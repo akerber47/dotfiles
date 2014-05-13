@@ -1,0 +1,6 @@
+[submodule ".vim"]
+	path = .vim
+	url = https://github.com/akerber47/vim-config
+[submodule ".xmonad"]
+	path = .xmonad
+	url = https://github.com/akerber47/xmonad-config
