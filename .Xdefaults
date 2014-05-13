@@ -1,0 +1,82 @@
+!
+! ~/.Xdefaults $Revision: 1.6 $
+!
+! This file is your X resources configuration file. It includes your color
+! scheme as defined in ~/.colors.h; use ROTOBG, ROOTFG, etc. where you would
+! otherwise use a color name. Invoke xrdb with -I$HOME so ~/.colors.h is
+! found.
+!
+! For a list of relevant X resource classes and resource names for your
+! applications, check refer to the man pages for the applications.
+!
+! EDIT THIS FILE to define X resources for your applications.
+!
+! EXAMPLES are available in /usr/local/doc/startups.
+!
+
+!
+! Global options
+!
+*lprCommand:            lpr
+
+!
+! Xterm defaults
+!
+
+! XTerm*backarrowKey: true
+! XTerm*backarrowKeyIsErase: true
+XTerm*background: #000000
+XTerm*cursorColor: #FFCC66
+XTerm*foreground: #FFCC66
+XTerm*pointerColor: #FFCC66
+XTerm*font: 10x20
+XTerm*geometry: 100x34+0+0
+XTerm*title: X-Terminal
+XTerm*iconName: X-Terminal
+XTerm*jumpScroll: true
+XTerm*loginShell: true
+XTerm*reverseWrap: true
+XTerm*saveLines: 1000
+XTerm*scrollBar: false
+XTerm*termName: xterm
+XTerm*utmpInhibit: false
+XTerm*visualbell: false
+XTerm.geometry: 80x24
+XTerm.ptyInitialErase: false
+
+!
+! Rxvt defaults
+!
+Rxvt*background: #000000
+Rxvt*foreground: #FFCC66
+Rxvt*cursorColor: #FFCC66
+Rxvt*pointerColor: #FFCC66
+Rxvt*title: X-Terminal
+Rxvt*iconName: X-Terminal
+Rxvt*termName: xterm
+! Small monitor
+!Rxvt*font: 10x20
+!Rxvt*geometry: 126x49+0+0
+! Big ass monitor
+Rxvt*font: -sony-fixed-medium-r-normal--24-170-100-100-c-120-iso8859-1
+Rxvt*geometry: 158x48+0+0
+! XXX Why did this stop working? (fenchurch, 2012-12-04)
+! Rxvt*backspacekey: <used to be "^H" here>
+Rxvt*loginShell: False
+Rxvt*utmpInhibit: False
+Rxvt*scrollBar: False
+Rxvt*scrollBar_floating: False
+Rxvt*scrollBar_right: True
+Rxvt*visualbell: false
+Rxvt*saveLines: 256
+
+!
+! xdvi, fig, xpdf
+!
+xdvi.mouseMode: 1
+xdvi.shrinkFactor: 6
+Fig.latexfonts: true
+Fig.specialtext: true
+XDvi.mainTranslations: #override\n\
+	<Key>BackSpace:up-or-previous()\n\
+	<Key>osfBackSpace:up-or-previous()\n

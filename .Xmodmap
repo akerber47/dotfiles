@@ -1,0 +1,110 @@
+! Swap caps lock and escape
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock NoSymbol Caps_Lock
+keysym Caps_Lock = Escape NoSymbol Escape
+add Lock = Caps_Lock
+
+! Gave up on 8/9/2013, will return...
+! 
+! ! Enforce left vs right shift
+! clear Shift
+! 
+! keycode 10 = 1 NoSymbol exclam NoSymbol
+! keycode  11 = 2 NoSymbol at NoSymbol
+! keycode  12 = 3 NoSymbol numbersign NoSymbol
+! keycode  13 = 4 NoSymbol dollar NoSymbol
+! keycode  14 = 5 NoSymbol percent NoSymbol
+! keycode  15 = 6 NoSymbol asciicircum NoSymbol
+! keycode  16 = 7 ampersand NoSymbol NoSymbol
+! keycode  17 = 8 asterisk NoSymbol NoSymbol
+! keycode  18 = 9 parenleft NoSymbol NoSymbol
+! keycode  19 = 0 parenright NoSymbol NoSymbol
+! keycode  20 = bracketleft braceleft NoSymbol NoSymbol
+! keycode  21 = bracketright braceright NoSymbol NoSymbol
+! keycode  24 = apostrophe NoSymbol quotedbl NoSymbol
+! keycode  25 = comma NoSymbol less NoSymbol
+! keycode  26 = period NoSymbol greater NoSymbol
+! keycode  27 = p NoSymbol P NoSymbol
+! keycode  28 = y NoSymbol Y NoSymbol
+! keycode  29 = f F NoSymbol NoSymbol
+! keycode  30 = g G NoSymbol NoSymbol
+! keycode  31 = c C NoSymbol NoSymbol
+! keycode  32 = r R NoSymbol NoSymbol
+! keycode  33 = l L NoSymbol NoSymbol
+! keycode  34 = slash question NoSymbol NoSymbol
+! keycode  35 = equal plus NoSymbol NoSymbol
+! keycode  38 = a NoSymbol A NoSymbol
+! keycode  39 = o NoSymbol O NoSymbol
+! keycode  40 = e NoSymbol E NoSymbol
+! keycode  41 = u NoSymbol U NoSymbol
+! keycode  42 = i NoSymbol I NoSymbol
+! keycode  43 = d D NoSymbol NoSymbol
+! keycode  44 = h H NoSymbol NoSymbol
+! keycode  45 = t T NoSymbol NoSymbol
+! keycode  46 = n N NoSymbol NoSymbol
+! keycode  47 = s S NoSymbol NoSymbol
+! keycode  48 = minus underscore NoSymbol NoSymbol
+! keycode  49 = grave NoSymbol asciitilde NoSymbol
+! keycode  51 = backslash bar NoSymbol NoSymbol
+! keycode  52 = semicolon NoSymbol colon NoSymbol
+! keycode  53 = q NoSymbol Q NoSymbol
+! keycode  54 = j NoSymbol J NoSymbol
+! keycode  55 = k NoSymbol K NoSymbol
+! keycode  56 = x NoSymbol X NoSymbol
+! keycode  57 = b B NoSymbol NoSymbol
+! keycode  58 = m M NoSymbol NoSymbol
+! keycode  59 = w W NoSymbol NoSymbol
+! keycode  60 = v V NoSymbol NoSymbol
+! keycode  61 = z Z NoSymbol NoSymbol
+! 
+! keysym Shift_R = Mode_switch
+! add Shift = Shift_L
+! 
+! ! These are the original mappings of all the keys we will change
+! ! keycode  10 = 1 exclam 1 exclam
+! ! keycode  11 = 2 at 2 at
+! ! keycode  12 = 3 numbersign 3 numbersign
+! ! keycode  13 = 4 dollar 4 dollar
+! ! keycode  14 = 5 percent 5 percent
+! ! keycode  15 = 6 asciicircum 6 asciicircum
+! ! keycode  16 = 7 ampersand 7 ampersand
+! ! keycode  17 = 8 asterisk 8 asterisk
+! ! keycode  18 = 9 parenleft 9 parenleft dead_grave NoSymbol dead_grave
+! ! keycode  19 = 0 parenright 0 parenright
+! ! keycode  20 = bracketleft braceleft bracketleft braceleft
+! ! keycode  21 = bracketright braceright bracketright braceright
+! ! keycode  24 = apostrophe quotedbl apostrophe quotedbl
+! ! keycode  25 = comma less comma less
+! ! keycode  26 = period greater period greater
+! ! keycode  27 = p P p P
+! ! keycode  28 = y Y y Y
+! ! keycode  29 = f F f F
+! ! keycode  30 = g G g G
+! ! keycode  31 = c C c C
+! ! keycode  32 = r R r R
+! ! keycode  33 = l L l L
+! ! keycode  34 = slash question slash question
+! ! keycode  35 = equal plus equal plus
+! ! keycode  38 = a A a A
+! ! keycode  39 = o O o O
+! ! keycode  40 = e E e E
+! ! keycode  41 = u U u U
+! ! keycode  42 = i I i I
+! ! keycode  43 = d D d D
+! ! keycode  44 = h H h H
+! ! keycode  45 = t T t T
+! ! keycode  46 = n N n N
+! ! keycode  47 = s S s S
+! ! keycode  48 = minus underscore minus underscore
+! ! keycode  49 = grave asciitilde grave asciitilde
+! ! keycode  51 = backslash bar backslash bar
+! ! keycode  52 = semicolon colon semicolon colon
+! ! keycode  53 = q Q q Q
+! ! keycode  54 = j J j J
+! ! keycode  55 = k K k K
+! ! keycode  56 = x X x X
+! ! keycode  57 = b B b B
+! ! keycode  58 = m M m M
+! ! keycode  59 = w W w W
+! ! keycode  60 = v V v V
+! ! keycode  61 = z Z z Z

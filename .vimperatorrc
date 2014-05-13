@@ -1,0 +1,24 @@
+"2.1 (created: 2009/05/21 13:13:06)
+
+set newtab=all
+set complete=slb
+set wim=full
+set runtimepath=/home/u2/grad/alvin/.vimperator
+source! /home/u2/grad/alvin/.vimperatorrc.local
+
+map <F2> :set go+=mT<CR>
+map <F3> :set go-=mT<CR>
+
+
+" Dvorakitude - home row
+noremap t j
+noremap n k
+noremap s l
+" need to move search
+noremap l n
+noremap L N
+" l for Look
+noremap c t
+set editor='/home/u2/grad/alvin/bin/vimexec'
+
+" vim: set ft=vimperator:

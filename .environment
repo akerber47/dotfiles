@@ -1,0 +1,123 @@
+#
+# ~/.environment
+#
+# This is a configuration file for path, umask, aliases, and other personal
+# environment settings. It is loaded whenever you log in or open a shell.
+#
+# Start a new shell (or type 'source ~/.environment' in an existing shell) to
+# have these changes take effect.
+#
+# The shell treats lines beginning with # as comments.
+#
+# EDIT THIS FILE to modify your path, umask, aliases, or environment variables.
+#
+# Note: By default, there are a few commands defined for shell-independent
+# configuration. YOU SHOULD ONLY USE THESE COMMANDS in this file so that it
+# will work from all supported shells.
+# The commands are:
+#
+#   umask value                 set umask
+#   setenvvar VAR value         set environment variable
+#   setenvifnot VAR value       set env var, if not already set
+#   pathappend VAR value        append path element, only if not in path
+#   pathappendifdir VAR value   append path element, if exists and not in path
+#   pathprepend VAR value       prepend path element, only if not in path
+#   pathprependifdir VAR value  prepend path element, if exists and not in path
+#   shellcmd name 'command'     define a shell command
+#   sourcefile file             source a file, if it exists
+#
+
+# 
+# Umask
+#
+# The umask controls the permissions inherited by new files created from a
+# shell or a child process. here's a table of some umask values you might
+# use. See also tcsh(1) and chmod(1).
+#
+# note that files created from nano will have the umask of the process
+# that started nano, so for the safest behavior, set your umask and then
+# start nano from a shell, or create new files in the shell. see touch(1).
+#
+#       owner   group   other   appropriate for
+# 002   rwx     rwx     r-x     most project work; TA and project web files
+# 007   rwx     rwx     ---     most TA work; private project work
+# 022   rwx     r-x     r-x     most dotfiles; public web files
+# 027   rwx     r-x     ---     most coursework (group = csxxxta)
+# 077   rwx     ---     ---     coursework with group = ugrad
+#
+
+umask 066
+
+#
+# Environment variables
+#
+
+# Set some common environment variables.
+setenvvar        PRINTER          bw1
+setenvvar        PAGER            less
+setenvvar        LESS             -X
+setenvvar        EDITOR           vim
+setenvifnot      VISUAL           vim
+
+# setenvvar        CSCOPE_DB        ./cscope.out
+setenvvar        DBG              all
+setenvvar        AWT_TOOLKIT      MToolkit # Java Swing with XMonad is dumb
+setenvvar        LC_PAPER         en_US.UTF-8 # GNOME programs can't print
+
+# From dircolors v. 8+, not supported here
+#setenvvar LS_COLORS 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
+setenvvar LS_COLORS 'di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
+
+
+#
+# Paths
+#
+# Add some important default paths. If you don't know what one of these is for,
+# you should probably leave it alone.
+setenvvar        PATH             '/local/bin:/usr/local/bin:/bin:/usr/bin'
+pathappend       PATH             '/usr/X11R6/bin'
+pathappend       PATH             '/usr/sbin'
+pathappend       PATH             '/admin/consult/bin'
+pathappend       PATH             '/contrib/bin:/usr/games'
+setenvvar        MANPATH          '/usr/local/man:/usr/share/man'
+pathappend       MANPATH          '/usr/X11R6/man'
+pathappend       MANPATH          '/usr/local/share/man'
+pathappend       MANPATH          '/local/share/man'
+pathappend       MANPATH          '/contrib/share/man'
+
+# Add your personal bin and man directories (if they exist) to your path.
+pathprependifdir PATH             "$HOME/bin"
+pathprependifdir MANPATH          "$HOME/man"
+
+setenvvar        MANSECT          2:3:1:4:5:6:7:8:9
+
+# Amazon EC2 API Tools
+setenvvar        JAVA_HOME        '/usr'
+setenvvar        EC2_HOME         '/home/alvin/builds/ec2-api-tools-1.6.6.1'
+pathappend       PATH             '/home/alvin/builds/ec2-api-tools-1.6.6.1/bin'
+setenvvar        AWS_ACCESS_KEY   'AKIAI3TIHZSAPC276PZQ'
+setenvvar        AWS_SECRET_KEY   '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'
+setenvvar        EC2_URL          'https://ec2.us-west-1.amazonaws.com'
+
+# Add custom paths and manpaths.
+#pathappend       PATH          /my/favorite/path
+#pathappend       MANPATH       /my/favorite/manpath
+
+#
+# Coursehooks
+#
+
+# Configure how course-specific settings are loaded. Refer to hooks(7).
+#setenvvar      CSIDENT_SKIP    'cs017student'
+#setenvvar      CSIDENT_APPEND  'cs004ta cs123student'
+
+pathprepend PATH /research/plt/software/racket/5.0.2/std/bin
+pathprepend MANPATH /research/plt/software/racket/5.0.2/std/man
+
+pathprepend PATH /research/plt/ghc/latest/bin
+pathprepend MANPATH /research/plt/ghc/latest/man
+
+eval `opam config env`
+
+# Java + XMonad = boom!
+setenvvar _JAVA_AWT_WM_NONREPARENTING 1 
