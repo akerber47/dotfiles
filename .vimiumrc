@@ -1,0 +1,53 @@
+unmapAll
+
+" Help
+map ? showHelp
+map <f1> showHelp
+
+" -- Movement --
+" Dvorak
+map h scrollLeft
+map t scrollDown
+map n scrollUp
+map s scrollRight
+map H goBack
+map T nextTab
+map N previousTab
+map S goForward
+" First/last
+map ^ firstTab
+map $ lastTab
+" Fix d and u
+map u scrollFullPageUp
+map U scrollToTop
+map d scrollFullPageDown
+map D scrollToBottom
+
+" URLs
+map r reload
+map gs toggleViewSource
+map yy copy CurrentUrl
+map p openCopiedUrlInNewTab
+
+" Open
+map o Vomnibar.activate
+map O Vomnibar.activateInNewTab
+map c newTab
+map C duplicateTab
+
+" Find
+map / enterFindMode
+map \ Vomnibar.activateTabSelection
+map l performFind
+map L performBackwardsFind
+
+" Misc
+map x removeTab
+map X restoreTab
+map i enterInsertMode
+map a focusInput
+map :n goNext
+map :p goPrevious
+map :s moveTabToNewWindow
+map m Marks.activateCreateMode
+map ' Marks.activateGotoMode
