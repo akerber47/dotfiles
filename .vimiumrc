@@ -32,7 +32,7 @@ map p openCopiedUrlInNewTab
 " Open
 map o Vomnibar.activate
 map O Vomnibar.activateInNewTab
-map c newTab
+map c createTab
 map C duplicateTab
 
 " Find
