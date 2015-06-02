@@ -30,6 +30,9 @@ XTerm*cursorColor: #FFCC66
 XTerm*foreground: #FFCC66
 XTerm*pointerColor: #FFCC66
 XTerm*font: 10x20
+! High res mode
+! XTerm*font: *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-1
+! XTerm*font: *-*-fixed-medium-r-normal--*-170-*-*-*-*-iso8859-1
 XTerm*geometry: 100x34+0+0
 XTerm*title: X-Terminal
 XTerm*iconName: X-Terminal

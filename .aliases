@@ -64,3 +64,10 @@ alias any='anyone -u -m "%d people love you!"'
 alias sshcs='ssh ssh.cs.brown.edu'
 alias sshm='ssh login.math.berkeley.edu'
 alias mntsansa='sudo mount -o uid=1000,gid=100 /dev/sdb /mnt/sansa'
+
+alias xr2h='xrandr --output DP1 --auto --right-of eDP1 --mode 2560x1440'
+alias xr1h='xrandr --output DP1 --off'
+alias xb='xbacklight -set 20'
+
+alias dv='setxkbmap dvorak; xmodmap ~/.Xmodmap'
+alias us='setxkbmap us'
