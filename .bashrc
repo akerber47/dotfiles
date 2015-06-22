@@ -25,11 +25,6 @@ pathprependifdir () { if [ -d "$2" ]; then pathprepend $*; fi; }
 shellcmd () { _cmd=$1; shift; eval "$_cmd () { command $* \"\$@\"; }"; }
 sourcefile () { if [ -f "$1" ]; then . $1; fi; }
 
-xw () {
-	setsid xwrits typetime=5 breaktime=:30 title=Micro canceltime=5 after=2 maxhands=20 +multiply
-	setsid xwrits typetime=55 breaktime=5 title=Macro canceltime=5 after=2 maxhands=20 +multiply
-}
-
 mycd () {
     cd "$@"
     echo `pwd`
@@ -41,32 +36,9 @@ mycd () {
     then
         col -b < TODO
     fi
-    if pwd | grep -q "^/\(course\)\|\(pro\)\|\(admin\)\|\(contrib\)\|\(research\)"
-    then
-		if pwd | grep -q "\(www\)\|\(web\)"
-		then
-			umask 002
-		elif pwd | grep -q "plt"
-		then
-			umask 002
-		else
-	        umask 007
-		fi
-    elif pwd | grep -q "compilers/rkt"
-	then
-        umask 026
-	elif pwd | grep -q "\(public_html\)\|\(www\)\|\(web\)\|\(srv\)"
-	then
-		umask 022
-	else
-		umask 066
-    fi
 }
 # Load personal environment settings.
 sourcefile $HOME/.environment
-
-# Run the coursehooks.
-#sourcefile /u/system/hooks/sh/simple-hooks
 
 sourcefile $HOME/.aliases
 
@@ -86,4 +58,3 @@ ulimit -c 0
 
 # Set the prompt.
 PS1="\[`tput rev`\]\h\[`tput sgr0`\] \w \$ ";
-

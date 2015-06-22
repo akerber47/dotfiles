@@ -77,13 +77,10 @@ setenvvar LS_COLORS 'di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd
 setenvvar        PATH             '/local/bin:/usr/local/bin:/bin:/usr/bin'
 pathappend       PATH             '/usr/X11R6/bin'
 pathappend       PATH             '/usr/sbin'
-pathappend       PATH             '/admin/consult/bin'
-pathappend       PATH             '/contrib/bin:/usr/games'
 setenvvar        MANPATH          '/usr/local/man:/usr/share/man'
 pathappend       MANPATH          '/usr/X11R6/man'
 pathappend       MANPATH          '/usr/local/share/man'
 pathappend       MANPATH          '/local/share/man'
-pathappend       MANPATH          '/contrib/share/man'
 
 # Add your personal bin and man directories (if they exist) to your path.
 pathprependifdir PATH             "$HOME/bin"
@@ -107,17 +104,7 @@ setenvvar        EC2_URL          'https://ec2.us-west-1.amazonaws.com'
 # Coursehooks
 #
 
-# Configure how course-specific settings are loaded. Refer to hooks(7).
-#setenvvar      CSIDENT_SKIP    'cs017student'
-#setenvvar      CSIDENT_APPEND  'cs004ta cs123student'
-
-pathprepend PATH /research/plt/software/racket/5.0.2/std/bin
-pathprepend MANPATH /research/plt/software/racket/5.0.2/std/man
-
-pathprepend PATH /research/plt/ghc/latest/bin
-pathprepend MANPATH /research/plt/ghc/latest/man
-
 eval `opam config env`
 
 # Java + XMonad = boom!
-setenvvar _JAVA_AWT_WM_NONREPARENTING 1 
+setenvvar _JAVA_AWT_WM_NONREPARENTING 1
