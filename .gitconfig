@@ -3,7 +3,7 @@
 	excludesfile = ~/.gitignore
 [user]
 	name = Alvin Kerber
-	email = akerber47@gmail.com
+	email = alvin.kerber@delphix.com
 [color]
 	diff = auto
 	status = auto
@@ -17,5 +17,16 @@
 	a = add
 	p = pull
 	u = push
+	au = appliance-update
+	rv = review
+	dv = dv-test
+	ri = rebase --interactive
+	co = checkout
 [merge]
 	conflictstyle = diff3
+[dlpx]
+	email = alvin.kerber@delphix.com
+	ldap-user = akerber
+	default-appliance = akerber-trunk.dc1
+[reviewboard]
+	url = http://reviews.delphix.com

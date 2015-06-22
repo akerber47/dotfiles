@@ -3,8 +3,6 @@
 #
 alias cd='mycd'
 alias v='vim'
-alias dv='setxkbmap dvorak; xmodmap ~/.Xmodmap'
-alias us='setxkbmap us'
 
 alias rt='xrandr -o'
 alias l='ls -a -l -h -F --color=always'
@@ -24,3 +22,11 @@ alias mv='mv -i'
 alias xr2h='xrandr --output DP1 --auto --right-of eDP1 --mode 2560x1440'
 alias xr1h='xrandr --output DP1 --off'
 alias xb='xbacklight -set 20'
+
+alias dv='setxkbmap dvorak; xmodmap ~/.Xmodmap'
+alias us='setxkbmap us'
+
+alias dc1='ssh akerber@dc1'
+alias tru='ssh delphix@akerber-trunk.dc1'
+alias truadm='ssh delphix_admin@akerber-trunk.dc1'
+alias gal='ssh akerber@galaxy'

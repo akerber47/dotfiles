@@ -77,6 +77,7 @@ setenvvar LS_COLORS 'di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd
 setenvvar        PATH             '/local/bin:/usr/local/bin:/bin:/usr/bin'
 pathappend       PATH             '/usr/X11R6/bin'
 pathappend       PATH             '/usr/sbin'
+pathappend       PATH             '$HOME/tools/git-utils/bin'
 setenvvar        MANPATH          '/usr/local/man:/usr/share/man'
 pathappend       MANPATH          '/usr/X11R6/man'
 pathappend       MANPATH          '/usr/local/share/man'
@@ -103,8 +104,6 @@ setenvvar        EC2_URL          'https://ec2.us-west-1.amazonaws.com'
 #
 # Coursehooks
 #
-
-eval `opam config env`
 
 # Java + XMonad = boom!
 setenvvar _JAVA_AWT_WM_NONREPARENTING 1
