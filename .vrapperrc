@@ -1,0 +1,45 @@
+noremap ; :
+noremap t j
+noremap n k
+noremap s l
+noremap S L
+noremap l n
+noremap L N
+noremap k s
+noremap - 0
+noremap _ $
+noremap <Tab> %
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+
+noremap ,, :split<Enter>
+noremap ,. :vsplit<Enter>
+noremap ,h :wincmd h<Enter>
+noremap ,t :wincmd j<Enter>
+noremap ,n :wincmd k<Enter>
+noremap ,s :wincmd l<Enter>
+noremap ,H :wincmd H<Enter>
+noremap ,T :wincmd J<Enter>
+noremap ,N :wincmd K<Enter>
+noremap ,S :wincmd L<Enter>
+
+set smartindent
+set ignorecase
+set hlsearch
+set incsearch
+set number
+set cursorline
+set scrolloff=3
+set textwidth=120
+set softtabstop=4
+set shiftround
+set shiftwidth=4
+
+set contentassistmode
+set startnormalmode

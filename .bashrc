@@ -17,7 +17,7 @@
 # Define the shell-independent environment commands. See hooks(7) for more
 # information.
 setenvvar () { eval $1=\"$2\"; export $1; }
-setenvifnot () { if eval [ -z \"\$$1\" ]; then eval $1=\"$2\"; export $1; fi; }
+#setenvifnot () { if eval [ -z \"\$$1\" ]; then eval $1=\"$2\"; export $1; fi; }
 pathappend () { if eval expr ":\$$1::" : ".*:$2:.*" >/dev/null 2>&1; then true; else eval $1=\$$1:$2; fi; }
 pathappendifdir () { if [ -d "$2" ]; then pathappend $*; fi; }
 pathprepend () { if eval expr ":\$$1::" : ".*:$2:.*" >/dev/null 2>&1; then true; else eval $1=$2:\$$1; fi; }
@@ -37,6 +37,26 @@ mycd () {
         col -b < TODO
     fi
 }
+
+# install rlwrap on vm
+# Doesn't really work... pseudo-terminal + su password issues
+rlwrap_install () {
+    scp ~/Downloads/rlwrap-0.42.tar "$@":~
+    ssh -t -t "$@" <<-EOF
+      tar xvvf rlwrap-0.42.tar
+      cd rlwrap-0.42
+      ./configure
+      make
+      su -c 'make install' root
+      cd ..
+      rm -rf rlwrap-0.42 rlwrap-0.42.tar
+      su -c '/sbin/shutdown -h now' root
+EOF
+}
+
+# yay dcenter
+sourcefile $HOME/.bashrc-dc
+
 # Load personal environment settings.
 sourcefile $HOME/.environment
 

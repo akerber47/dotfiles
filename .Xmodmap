@@ -4,6 +4,20 @@ keysym Escape = Caps_Lock NoSymbol Caps_Lock
 keysym Caps_Lock = Escape NoSymbol Escape
 add Lock = Caps_Lock
 
+keycode 146 = F1 F1 F1 F1 F1 F1 XF86Switch_VT_1
+keycode 139 = F2 F2 F2 F2 F2 F2 XF86Switch_VT_2
+keycode 190 = F3 F3 F3 F3 F3 F3 XF86Switch_VT_3
+keycode 189 = F4 F4 F4 F4 F4 F4 XF86Switch_VT_4
+keycode 142 = F5 F5 F5 F5 F5 F5 XF86Switch_VT_5
+keycode 214 = F6 F6 F6 F6 F6 F6 XF86Switch_VT_6
+keycode 240 = F7 F7 F7 F7 F7 F7 XF86Switch_VT_7
+keycode 241 = F8 F8 F8 F8 F8 F8 XF86Switch_VT_8
+keycode 239 = F9 F9 F9 F9 F9 F9 XF86Switch_VT_9
+keycode 242 = F11 F11 F11 F11 F11 F11 XF86Switch_VT_11
+keycode 218 = F12 F12 F12 F12 F12 F12 XF86Switch_VT_12
+
+
+
 ! Gave up on 8/9/2013, will return...
 ! 
 ! ! Enforce left vs right shift

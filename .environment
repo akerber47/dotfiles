@@ -57,7 +57,7 @@ setenvvar        PRINTER          bw1
 setenvvar        PAGER            less
 setenvvar        LESS             -X
 setenvvar        EDITOR           vim
-setenvifnot      VISUAL           vim
+setenvvar        VISUAL           vim
 
 # setenvvar        CSCOPE_DB        ./cscope.out
 setenvvar        DBG              all
@@ -104,6 +104,8 @@ setenvvar        EC2_URL          'https://ec2.us-west-1.amazonaws.com'
 #
 # Coursehooks
 #
+
+. /usr/bin/virtualenvwrapper.sh
 
 # Java + XMonad = boom!
 setenvvar _JAVA_AWT_WM_NONREPARENTING 1

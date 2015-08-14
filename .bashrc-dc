@@ -1,0 +1,70 @@
+#!/bin/bash
+
+revm () {
+    ssh akerber@dcenter <<-EOF
+      dc refresh akerber-$1
+EOF
+}
+
+revm1 () {
+    ssh akerber@dc1 <<-EOF
+      dc refresh akerber-$1
+EOF
+}
+
+newvm () {
+    gpname=dlpx-trunk
+    vmname=$1
+    if [[ -n "$2" ]]
+    then
+        gpname=$1
+        vmname=$2
+    fi
+    ssh akerber@dcenter <<-EOF
+      dc clone-latest dlpx-trunk $1
+EOF
+}
+
+newvm1 () {
+    ssh akerber@dc1 <<-EOF
+      dc clone-latest dlpx-trunk $1
+EOF
+}
+
+vm () {
+    if [[ -n "$2" ]]
+    then
+        ssh ${2}@akerber-${1}.dcenter
+    elif [[ -n "$1" ]]
+    then
+        ssh delphix@akerber-${1}.dcenter
+    else
+        ssh delphix@akerber-t.dcenter
+    fi
+}
+vm1 () {
+    if [[ -n "$2" ]]
+    then
+        ssh ${2}@akerber-${1}.dc1
+    elif [[ -n "$1" ]]
+    then
+        ssh delphix@akerber-${1}.dcenter
+    else
+        ssh delphix@akerber-t1.dc1
+    fi
+}
+
+fixssh () {
+    cat ~/.ssh/id_rsa.pub | ssh "$@" 'cat >> .ssh/authorized_keys'
+}
+
+fixconf () {
+    scp ~/.vim/vimrc "$@":~/.vimrc
+    scp ~/.aliases-remote "$@":~/.aliases
+    echo "source ~/.aliases" | ssh "$@" 'cat >> ~/.bashrc'
+}
+
+fixsc () {
+    fixssh "$@"
+    fixconf "$@"
+}

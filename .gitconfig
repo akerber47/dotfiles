@@ -14,7 +14,9 @@
 	ci = commit
 	s = status
 	c = commit
+	ca = commit -a
 	a = add
+	caa = commit -a --amend --no-edit
 	p = pull
 	u = push
 	au = appliance-update
@@ -22,11 +24,26 @@
 	dv = dv-test
 	ri = rebase --interactive
 	co = checkout
+	br = branch
+	b = branch
+	brfix = branch --set-upstream-to=origin/master
+	dx = dx-test
+	clock = commit --amend --reset-author -C HEAD
+	z = zfs-make
+	zl = zfs-load akerber-trunk-os
+	zzl = !git z && git zl
+	k = !gitk --all &
 [merge]
 	conflictstyle = diff3
+	tool = vimdiff
+[mergetool]
+	prompt = false
+	keepBackup = false
 [dlpx]
 	email = alvin.kerber@delphix.com
 	ldap-user = akerber
 	default-appliance = akerber-trunk.dc1
 [reviewboard]
 	url = http://reviews.delphix.com
+[push]
+	default = tracking
